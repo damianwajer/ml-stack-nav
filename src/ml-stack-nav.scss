@@ -1,0 +1,118 @@
+@import "variables";
+
+.ml-stack-nav-toggle {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  width: 26px;
+  height: 22px;
+  border: 0;
+  background: none;
+  color: $ml-stack-nav-toggle-color;
+  cursor: pointer;
+  appearance: none;
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 9px;
+    background: $ml-stack-nav-toggle-color;
+    opacity: 1;
+    transition: $ml-stack-nav-base-duration ease-in-out;
+    transform: rotate(0deg);
+
+    &:nth-child(2) {
+      top: 9px;
+    }
+
+    &:nth-child(3) {
+      top: 18px;
+    }
+  }
+
+  &.is-active {
+    .ml-stack-nav-toggle__line {
+      &:nth-child(1) {
+        top: 9px;
+        left: 50%;
+        width: 0;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        top: 9px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.ml-stack-nav {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100%;
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: inherit;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: $ml-stack-nav-menu-level-offset;
+    z-index: $ml-stack-nav-menu-zindex;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    border: $ml-stack-nav-menu-border;
+    background-color: $ml-stack-nav-menu-bg-color;
+    list-style-position: inside;
+    transition: transform $ml-stack-nav-base-duration, visibility $ml-stack-nav-base-duration;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  > .ml-stack-nav__menu {
+    left: 0;
+  }
+
+  &--slide-left {
+    .ml-stack-nav__menu {
+      right: $ml-stack-nav-menu-level-offset;
+      left: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    > .ml-stack-nav__menu {
+      right: 0;
+    }
+  }
+}
+
+.is-open {
+  & > .ml-stack-nav__menu {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.is-active {
+  > .ml-stack-nav__menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

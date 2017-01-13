@@ -1,0 +1,42 @@
+{
+  "name": "ml-stack-nav",
+  "version": "1.0.0",
+  "description": "Customizable, accessible, easy-to-use multi-level stack navigation menu with slide effect.",
+  "main": "dist/ml-stack-nav.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/damianwajer/ml-stack-nav.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "navigation",
+    "menu",
+    "stack",
+    "slide",
+    "responsive",
+    "multi-level",
+    "ecosystem:jquery"
+  ],
+  "author": "Damian Wajer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/damianwajer/ml-stack-nav/issues"
+  },
+  "homepage": "https://github.com/damianwajer/ml-stack-nav",
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "postcss-banner": "^3.0.0"
+  }
+}

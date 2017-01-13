@@ -1,0 +1,95 @@
+/*!
+ * ml-stack-nav - v1.0.0
+ * Customizable, accessible, easy-to-use multi-level stack navigation menu with slide effect.
+ * https://github.com/damianwajer/ml-stack-nav
+ * 
+ * Author: Damian Wajer
+ * License: MIT
+ */
+/* Example navigation theme. */
+body {
+  box-sizing: border-box;
+  padding: 50px 1em 1em;
+}
+body *,
+body *:after,
+body *:before {
+  box-sizing: inherit;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 10px 1em;
+  height: 50px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.ml-stack-nav__item-inner {
+  position: relative;
+}
+
+.ml-stack-nav {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  font-size: 16px;
+}
+.ml-stack-nav__menu {
+  background-color: #f9f9f9;
+  list-style: none;
+}
+.ml-stack-nav__link {
+  display: block;
+  padding: 0.5em 80px 0.5em 1.5em;
+  border-bottom: 1px solid #000;
+  color: #000;
+  text-decoration: none;
+}
+.ml-stack-nav__link:focus, .ml-stack-nav__link:hover {
+  opacity: 0.5;
+}
+.ml-stack-nav__back {
+  padding: 0.5em 1.5em;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #000;
+  background-color: #ccc;
+  text-align: left;
+  cursor: pointer;
+}
+.ml-stack-nav__back:focus, .ml-stack-nav__back:hover {
+  opacity: 0.5;
+}
+.ml-stack-nav__next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  width: 70px;
+  text-align: center;
+}
+.ml-stack-nav__next:focus, .ml-stack-nav__next:hover {
+  opacity: 0.5;
+}
+.ml-stack-nav--slide-left.is-open > .ml-stack-nav__menu,
+.ml-stack-nav--slide-left .is-open > .ml-stack-nav__menu {
+  box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.is-open > .ml-stack-nav__menu {
+  box-shadow: -5px 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+/*# sourceMappingURL=ml-stack-nav-theme.css.map */
