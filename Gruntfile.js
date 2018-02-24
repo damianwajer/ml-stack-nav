@@ -6,7 +6,7 @@ module.exports = function (grunt) {
             getBanner: function (raw) {
                 var prefix = raw ? '' : '/*!\n',
                     newLinePrefix = raw ? '' : ' * ',
-                    suffix = raw ? '' : '\n*/\n';
+                    suffix = raw ? '' : '\n */';
 
                 return prefix +
                     newLinePrefix + pkg.name + ' - v' + pkg.version + '\n' +
@@ -14,7 +14,9 @@ module.exports = function (grunt) {
                     newLinePrefix + pkg.homepage + '\n' +
                     newLinePrefix + '\n' +
                     newLinePrefix + 'Author: ' + pkg.author + '\n' +
-                    newLinePrefix + 'License: ' + pkg.license +
+                    newLinePrefix + 'License: ' + pkg.license + '\n' +
+                    newLinePrefix + '\n' +
+                    newLinePrefix + '@preserve' +
                     suffix;
             }
         };
@@ -31,8 +33,8 @@ module.exports = function (grunt) {
         },
         concat: {
             options: {
-                banner: globalConfig.getBanner(),
-                sourceMap: false
+                banner: globalConfig.getBanner() + "\n",
+                sourceMap: true
             },
             dist: {
                 src: ['src/<%= pkg.name %>.js'],
@@ -42,10 +44,10 @@ module.exports = function (grunt) {
         uglify: {
             options: {
                 banner: globalConfig.getBanner(),
-                sourceMap: false
+                sourceMap: true
             },
             dist: {
-                src: '<%= concat.dist.dest %>',
+                src: 'src/<%= pkg.name %>.js',
                 dest: 'dist/<%= pkg.name %>.min.js'
             }
         },
@@ -88,7 +90,6 @@ module.exports = function (grunt) {
                         important: true
                     }),
                     require('autoprefixer')({
-                        browsers: ['> 1%', 'last 2 versions'],
                         remove: false
                     })
                 ]

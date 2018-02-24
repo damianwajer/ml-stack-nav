@@ -3,6 +3,6 @@
 .sass-cache
 .ruby-version
 .idea
-*.map
+.vscode
 bower_components
 node_modules

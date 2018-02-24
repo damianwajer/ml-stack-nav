@@ -5,7 +5,9 @@
  * 
  * Author: Damian Wajer
  * License: MIT
-*/
+ * 
+ * @preserve
+ */
 ;(function (factory) {
     // Uses CommonJS, AMD or browser globals to create a jQuery plugin | | MIT License | https://github.com/umdjs/umd
     if (typeof define === "function" && define.amd) {
@@ -210,3 +212,5 @@
         });
     };
 }));
+
+//# sourceMappingURL=ml-stack-nav.js.map

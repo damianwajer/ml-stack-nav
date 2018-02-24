@@ -4,6 +4,7 @@
   "description": "Customizable, accessible, easy-to-use multi-level stack navigation menu with slide effect.",
   "main": "dist/ml-stack-nav.js",
   "scripts": {
+    "start": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,12 +14,17 @@
   "keywords": [
     "jquery-plugin",
     "navigation",
+    "hamburger",
     "menu",
     "stack",
     "slide",
     "responsive",
     "multi-level",
-    "ecosystem:jquery"
+    "responsive-navigation",
+    "responsive-menu",
+    "mobile-navigation",
+    "mobile-menu",
+    "hamburger-menu"
   ],
   "author": "Damian Wajer",
   "license": "MIT",
@@ -26,17 +32,29 @@
     "url": "https://github.com/damianwajer/ml-stack-nav/issues"
   },
   "homepage": "https://github.com/damianwajer/ml-stack-nav",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "IE 9",
+    "Android 4.0",
+    "iOS 7",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
   "devDependencies": {
-    "autoprefixer": "^6.5.0",
-    "grunt": "^1.0.1",
+    "autoprefixer": "^8.0.0",
+    "grunt": "^1.0.2",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-cssmin": "^1.0.2",
-    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
+    "grunt-postcss": "^0.9.0",
     "postcss-banner": "^3.0.0"
   }
 }

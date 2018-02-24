@@ -1,26 +1,34 @@
 # Multi-level stack navigation (jQuery mlStackNav)
 > Customizable, accessible, easy-to-use multi-level stack navigation menu.
 
+The purpose behind this project is to provide a fully functional, responsive and usable navigation with minimal styling, which can also be used as a good starting point to implement your own custom design.
+
 ## Demo
 
 https://damianwajer.github.io/ml-stack-nav/
 
 ## Requirements
 
-- [jQuery](https://github.com/jquery/jquery)
+- [jQuery](https://github.com/jquery/jquery) >= 1.7
+
+## Browser support
+
+- All modern browsers such as Chrome, Firefox, Safari, Edge (last 2 versions) and Internet Explorer 10+
+- Internet Explorer 9 is also supported but without transition animations
+- Stock browser on Android 4.0+ and Safari on iOS 7+
 
 ## Usage
 
-Add required styles:    
+To get started just add required styles:
 
 ```html
 <link rel="stylesheet" href="dist/ml-stack-nav.css">
 ```
 
-Include jQuery (tested with v1.12.4 and above): 
+Include jQuery:
 
 ```html
-<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 ```
 
 …and the plugin JS file:
@@ -37,7 +45,16 @@ $(".js-ml-stack-nav").mlStackNav();
 
 Please see `index.html` file for demo and code example.
 
+The `dist/ml-stack-nav.js` and `dist/ml-stack-nav.css` files contain all what is necessary for the menu to work properly and they should not be edited directly. Unlike them, `dist/ml-stack-nav-theme.css` theme file provides example styles for the navigation and can be edited, extended or completely replaced with your own styles (the minified files `.min.css` and `.min.js` are also available in `dist` directory and you can use them on production instead of regular ones).
+
 ## Advanced usage
+
+The goal behind the mlStackNav is to provide a good starting point to implement navigation with custom design, so advanced usage is highly recommended. In order to take full advantage of the mlStackNav, please keep in mind its most important features:
+
+- separation of the appearance and the functionality
+- CSS class names according to BEM methodology
+- state rules inspired by SMACSS (Scalable and Modular Architecture for CSS)
+- `js-` prefixed classes to decouple JavaScript classes from CSS ones
 
 Multi-level stack navigation also supports multiple instances of the menu. 
 
@@ -101,11 +118,12 @@ CSS z-index property for navigation menu container.
 
 ## TODO
 
-**Features**
-
+- implement ARIA attributes
 - add swipe support
 - off-canvas mode (push)
 - improve documentation (methods, events)
+- more themes
+- tests
 
 ## Support
 
