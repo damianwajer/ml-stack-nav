@@ -56,6 +56,8 @@ The goal behind the mlStackNav is to provide a good starting point to implement 
 - state rules inspired by SMACSS (Scalable and Modular Architecture for CSS)
 - `js-` prefixed classes to decouple JavaScript classes from CSS ones
 
+### Multiple instances
+
 Multi-level stack navigation also supports multiple instances of the menu. 
 
 You can use it to implement as many navigation menus as you want by simply initializing different menus with separate toggle buttons. For example:
@@ -82,6 +84,14 @@ or by providing jQuery selector inside `data-nav-toggle` attribute:
 <nav class="ml-stack-nav js-ml-stack-nav" data-nav-toggle="#ml-stack-nav-toggle-2">(…)</nav>
 ```
 
+### Navigation with JavaScript disabled
+
+mlStackNav can still works in its basic form even when JavaScript is disabled. You just need to make sure that:
+
+- `no-js` class is present on the top level element on your page (e.g. on `html` element: `<html class="no-js">`
+- `no-js` is removed before mlStackNav initialization, e.g. `$("html").removeClass("no-js")`
+- a link with the anchor matching the navigation `id` is used instead of a button (e.g. `<a href="#ml-stack-nav-1" class="ml-stack-nav-toggle">` and `<nav id="ml-stack-nav-1" class="ml-stack-nav js-ml-stack-nav">`)
+
 ## Options
 
 #### navToggleSelector
@@ -90,7 +100,7 @@ Type: `String`
 
 Default: `.ml-stack-nav-toggle`
 
-jQuery selector with toggle button element.
+jQuery selector with toggle button element (or a link).
 
 #### openClass
 

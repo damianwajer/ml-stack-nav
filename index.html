@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
     <title>Multi-level stack navigation</title>
@@ -53,11 +53,11 @@
 </head>
 <body>
 <div class="header">
-    <button type="button" class="ml-stack-nav-toggle" title="Toggle the navigation">
+    <a href="#ml-stack-nav" class="ml-stack-nav-toggle" title="Toggle the navigation">
         <span class="ml-stack-nav-toggle__line"></span>
         <span class="ml-stack-nav-toggle__line"></span>
         <span class="ml-stack-nav-toggle__line"></span>
-    </button><!-- /.ml-stack-nav-toggle -->
+    </a><!-- /.ml-stack-nav-toggle -->
 
     <nav class="nav">
         <ul>
@@ -71,7 +71,7 @@
     </nav>
 </div>
 
-<nav class="ml-stack-nav js-ml-stack-nav">
+<nav class="ml-stack-nav js-ml-stack-nav" id="ml-stack-nav">
     <ul class="ml-stack-nav__menu">
         <li class="ml-stack-nav__item">
             <div class="ml-stack-nav__item-inner">
@@ -297,15 +297,21 @@
 
 <h3>Navigation toggle button</h3>
 
-<pre><code>&lt;button type=&quot;button&quot; class=&quot;ml-stack-nav-toggle&quot;&gt;
+<pre><code>&lt;button type=&quot;button&quot; class=&quot;ml-stack-nav-toggle&quot; title=&quot;Toggle the navigation&quot;&gt;
     &lt;span class=&quot;ml-stack-nav-toggle__line&quot;&gt;&lt;/span&gt;
     &lt;span class=&quot;ml-stack-nav-toggle__line&quot;&gt;&lt;/span&gt;
     &lt;span class=&quot;ml-stack-nav-toggle__line&quot;&gt;&lt;/span&gt;
 &lt;/button&gt;</code></pre>
 
+<p>
+    &hellip;or a link for basic no-js support (see more in the documentation):
+</p>
+
+<pre><code>&lt;a href=&quot;#ml-stack-nav-1&quot; class=&quot;ml-stack-nav-toggle&quot; title=&quot;Toggle the navigation&quot;&gt;(&hellip;)&lt;/a&gt;</code></pre>
+
 <h3>Multi-level navigation menu</h3>
 
-<pre><code>&lt;nav class=&quot;ml-stack-nav js-ml-stack-nav&quot;&gt;
+<pre><code>&lt;nav id=&quot;ml-stack-nav&quot; class=&quot;ml-stack-nav js-ml-stack-nav&quot;&gt;
     &lt;ul class=&quot;ml-stack-nav__menu&quot;&gt;
         &lt;li class=&quot;ml-stack-nav__item&quot;&gt;
             &lt;div class=&quot;ml-stack-nav__item-inner&quot;&gt;
@@ -367,6 +373,7 @@
 <script src="dist/ml-stack-nav.min.js"></script>
 
 <script>
+    $("html").removeClass("no-js");
     $(".js-ml-stack-nav").mlStackNav();
 </script>
 </body>

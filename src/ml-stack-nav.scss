@@ -2,6 +2,7 @@
 
 .ml-stack-nav-toggle {
   position: relative;
+  display: inline-block;
   overflow: hidden;
   padding: 0;
   width: 26px;
@@ -101,6 +102,25 @@
       right: 0;
     }
   }
+
+  @at-root .no-js & {
+    &:target {
+      position: static;
+      visibility: visible;
+      transform: translate3d(0, 0, 0);
+
+      .ml-stack-nav__menu {
+        position: static;
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .ml-stack-nav__next,
+    .ml-stack-nav__back {
+      display: none;
+    }
+  }
 }
 
 .is-open {
@@ -116,3 +136,4 @@
     overflow-y: auto;
   }
 }
+
