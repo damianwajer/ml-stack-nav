@@ -1,5 +1,5 @@
 /*!
- * ml-stack-nav - v1.0.0
+ * ml-stack-nav - v1.1.0
  * Customizable, accessible, easy-to-use multi-level stack navigation menu with slide effect.
  * https://github.com/damianwajer/ml-stack-nav
  * 

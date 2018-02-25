@@ -1,6 +1,6 @@
 {
   "name": "ml-stack-nav",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Customizable, accessible, easy-to-use multi-level stack navigation menu with slide effect.",
   "main": "dist/ml-stack-nav.js",
   "scripts": {
@@ -42,7 +42,7 @@
     "not dead"
   ],
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": ">=1.7 || ^3.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.0.0",
