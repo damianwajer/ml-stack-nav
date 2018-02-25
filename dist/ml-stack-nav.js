@@ -152,7 +152,9 @@
 
             this.el.$toggleButton.addClass(this.config.activeClass);
 
-            this.el.$nav.addClass(this.config.openClass + " " + this.config.activeClass)
+            this.el.$nav
+                .attr("aria-expanded", "true")
+                .addClass(this.config.openClass + " " + this.config.activeClass)
                 .css("z-index", this.config.zIndexValue);
         },
 
@@ -196,7 +198,9 @@
             this.el.$toggleButton.removeClass(this.config.activeClass);
 
             // Remove open and active classes from all elements.
-            this.el.$nav.removeClass(this.config.openClass + " " + this.config.activeClass)
+            this.el.$nav
+                .removeClass(this.config.openClass + " " + this.config.activeClass)
+                .attr("aria-expanded", "false")
                 .find("." + this.config.openClass).removeClass(this.config.openClass);
             this.el.$nav.find("." + this.config.activeClass).removeClass(this.config.activeClass);
         }

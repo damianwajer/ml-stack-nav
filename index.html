@@ -24,7 +24,10 @@
         }
 
         .nav {
-            float: right;
+            position: absolute;
+            top: 7px;
+            right: 1em;
+            margin-left: 50px;
         }
 
         .nav svg {
@@ -53,12 +56,6 @@
 </head>
 <body>
 <div class="header">
-    <a href="#ml-stack-nav" class="ml-stack-nav-toggle" title="Toggle the navigation">
-        <span class="ml-stack-nav-toggle__line"></span>
-        <span class="ml-stack-nav-toggle__line"></span>
-        <span class="ml-stack-nav-toggle__line"></span>
-    </a><!-- /.ml-stack-nav-toggle -->
-
     <nav class="nav">
         <ul>
             <li>
@@ -69,9 +66,15 @@
             </li>
         </ul>
     </nav>
+
+    <a href="#ml-stack-nav-1" class="ml-stack-nav-toggle" aria-controls="ml-stack-nav-1" title="Toggle the navigation">
+        <span class="ml-stack-nav-toggle__line"></span>
+        <span class="ml-stack-nav-toggle__line"></span>
+        <span class="ml-stack-nav-toggle__line"></span>
+    </a><!-- /.ml-stack-nav-toggle -->
 </div>
 
-<nav class="ml-stack-nav js-ml-stack-nav" id="ml-stack-nav">
+<nav id="ml-stack-nav-1" class="ml-stack-nav js-ml-stack-nav" aria-expanded="false">
     <ul class="ml-stack-nav__menu">
         <li class="ml-stack-nav__item">
             <div class="ml-stack-nav__item-inner">
@@ -297,7 +300,7 @@
 
 <h3>Navigation toggle button</h3>
 
-<pre><code>&lt;button type=&quot;button&quot; class=&quot;ml-stack-nav-toggle&quot; title=&quot;Toggle the navigation&quot;&gt;
+<pre><code>&lt;button type=&quot;button&quot; class=&quot;ml-stack-nav-toggle&quot; aria-controls=&quot;ml-stack-nav-1&quot; title=&quot;Toggle the navigation&quot;&gt;
     &lt;span class=&quot;ml-stack-nav-toggle__line&quot;&gt;&lt;/span&gt;
     &lt;span class=&quot;ml-stack-nav-toggle__line&quot;&gt;&lt;/span&gt;
     &lt;span class=&quot;ml-stack-nav-toggle__line&quot;&gt;&lt;/span&gt;
@@ -307,11 +310,11 @@
     &hellip;or a link for basic no-js support (see more in the documentation):
 </p>
 
-<pre><code>&lt;a href=&quot;#ml-stack-nav-1&quot; class=&quot;ml-stack-nav-toggle&quot; title=&quot;Toggle the navigation&quot;&gt;(&hellip;)&lt;/a&gt;</code></pre>
+<pre><code>&lt;a href=&quot;#ml-stack-nav-1&quot; class=&quot;ml-stack-nav-toggle&quot; aria-controls=&quot;ml-stack-nav-1&quot; title=&quot;Toggle the navigation&quot;&gt;(&hellip;)&lt;/a&gt;</code></pre>
 
 <h3>Multi-level navigation menu</h3>
 
-<pre><code>&lt;nav id=&quot;ml-stack-nav&quot; class=&quot;ml-stack-nav js-ml-stack-nav&quot;&gt;
+<pre><code>&lt;nav id=&quot;ml-stack-nav-1&quot; class=&quot;ml-stack-nav js-ml-stack-nav&quot; aria-expanded=&quot;false&quot;&gt;
     &lt;ul class=&quot;ml-stack-nav__menu&quot;&gt;
         &lt;li class=&quot;ml-stack-nav__item&quot;&gt;
             &lt;div class=&quot;ml-stack-nav__item-inner&quot;&gt;

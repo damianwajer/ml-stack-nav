@@ -128,7 +128,6 @@ CSS z-index property for navigation menu container.
 
 ## TODO
 
-- implement ARIA attributes
 - add swipe support
 - off-canvas mode (push)
 - improve documentation (methods, events)
