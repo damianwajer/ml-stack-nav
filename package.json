@@ -43,10 +43,10 @@
     "not dead"
   ],
   "peerDependencies": {
-    "jquery": ">=1.7"
+    "jquery": "^1.7 || ^2.0 || ^3.0"
   },
   "devDependencies": {
-    "jquery": ">=1.7",
+    "jquery": "^1.7 || ^2.0 || ^3.0",
     "autoprefixer": "^8.0.0",
     "grunt": "^1.0.2",
     "grunt-browser-sync": "^2.2.0",
