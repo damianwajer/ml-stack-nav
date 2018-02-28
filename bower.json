@@ -1,0 +1,38 @@
+{
+  "name": "ml-stack-nav",
+  "description": "Customizable, responsive, accessible, easy-to-use multi-level stack navigation menu with slide effect.",
+  "main": [
+    "dist/ml-stack-nav.js",
+    "dist/ml-stack-nav.css"
+  ],
+  "authors": [
+    "Damian Wajer"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery-plugin",
+    "navigation",
+    "hamburger",
+    "menu",
+    "stack",
+    "slide",
+    "responsive",
+    "multi-level",
+    "responsive-navigation",
+    "responsive-menu",
+    "mobile-navigation",
+    "mobile-menu",
+    "hamburger-menu"
+  ],
+  "homepage": "https://github.com/damianwajer/ml-stack-nav",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^1.7 || ^2.0 || ^3.0"
+  }
+}
