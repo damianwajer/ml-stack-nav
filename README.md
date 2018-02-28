@@ -17,6 +17,12 @@ https://damianwajer.github.io/ml-stack-nav/
 - Internet Explorer 9 is also supported but without transition animations
 - Stock browser on Android 4.0+ and Safari on iOS 7+
 
+## Download
+
+- via [bower](https://bower.io): `bower install ml-stack-nav`
+- via [npm](https://www.npmjs.com/package/ml-stack-nav): `npm install ml-stack-nav`
+- from the [releases page](https://github.com/damianwajer/ml-stack-nav/releases)
+
 ## Usage
 
 To get started just add required styles:
