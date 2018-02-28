@@ -1,7 +1,7 @@
 {
   "name": "ml-stack-nav",
   "version": "1.1.2",
-  "description": "Customizable, accessible, easy-to-use multi-level stack navigation menu with slide effect.",
+  "description": "Customizable, responsive, accessible, easy-to-use multi-level stack navigation menu with slide effect.",
   "main": "dist/ml-stack-nav.js",
   "scripts": {
     "build": "npm install && grunt",
