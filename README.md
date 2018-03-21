@@ -132,11 +132,52 @@ Default: `900`
 
 CSS z-index property for navigation menu container.
 
+## Methods
+
+Using methods you can interact with the plugin programmatically from within your scripts, e.g. you can open or close the navigation on some custom event.
+
+Available methods:
+
+- `open` Open the navigation.
+- `close` Close the whole navigation.
+- `toggle` Open the navigation if it's closed, close if it's open.
+- `moveBack` Move to the previous menu level.
+- `isOpen` Check if the navigation is currently open.
+
+
+Example:
+
+```javascript
+$(".ml-stack-nav__link").on("click", function () {
+    $(".js-ml-stack-nav").mlStackNav("close");
+});
+```
+
+## Events
+
+Using events you can run some custom code, e.g. when menu opens or closes.
+
+- `show.ml-stack-nav` This event is triggered before the navigation opens (immediately when the `open` method is called).
+- `hide.ml-stack-nav` This event is triggered before the navigation closes (immediately when the `close` method is called).
+
+Example:
+
+```javascript
+$(".js-ml-stack-nav")
+    .on("show.ml-stack-nav", function (e) {
+        console.log(e);
+        alert("The navigation will open!");
+    })
+    .on("hide.ml-stack-nav", function (e) {
+        console.log(e);
+        alert("The navigation will close!");
+    });
+```
+
 ## TODO
 
 - add swipe support
 - off-canvas mode (push)
-- improve documentation (methods, events)
 - more themes
 - tests
 
