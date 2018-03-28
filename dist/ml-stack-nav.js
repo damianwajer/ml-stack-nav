@@ -1,6 +1,6 @@
 /*!
  * ml-stack-nav - v1.1.2
- * Customizable, accessible, easy-to-use multi-level stack navigation menu with slide effect.
+ * Customizable, responsive, accessible, easy-to-use multi-level stack navigation menu with slide effect.
  * https://github.com/damianwajer/ml-stack-nav
  * 
  * Author: Damian Wajer

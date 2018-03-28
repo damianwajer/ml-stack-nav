@@ -14,8 +14,22 @@ https://damianwajer.github.io/ml-stack-nav/
 ## Browser support
 
 - All modern browsers such as Chrome, Firefox, Safari, Edge (last 2 versions) and Internet Explorer 10+
-- Internet Explorer 9 is also supported but without transition animations
 - Stock browser on Android 4.0+ and Safari on iOS 7+
+- Internet Explorer 9 is also supported but without transition animations and with some additional CSS (I recommend placing IE 9 rules within conditional comment in `<head>` section of the HTML file or in some separate `.css` file with other IE 9 fixes):
+
+```html
+<!--[if IE 9]>
+<style type="text/css">
+    .ml-stack-nav {
+        display: none;
+    }
+    
+    .ml-stack-nav.is-open {
+        display: block;
+    }
+</style>
+<![endif]-->
+```
 
 ## Download
 
@@ -43,13 +57,21 @@ Include jQuery:
 <script src="dist/ml-stack-nav.js"></script>
 ```
 
+Navigation HTML markup should be placed at the top-level position directly under the `body` element in the document to avoid the stacking context issues.
+
+```html
+<body>
+    <nav class="ml-stack-nav js-ml-stack-nav">(…)</nav>
+</body>
+```
+
+Please see `index.html` file for demo and code example.
+
 Finally, initiate the plugin:
  
 ```javascript
 $(".js-ml-stack-nav").mlStackNav();
 ```
-
-Please see `index.html` file for demo and code example.
 
 The `dist/ml-stack-nav.js` and `dist/ml-stack-nav.css` files contain all what is necessary for the menu to work properly and they should not be edited directly. Unlike them, `dist/ml-stack-nav-theme.css` theme file provides example styles for the navigation and can be edited, extended or completely replaced with your own styles (the minified files `.min.css` and `.min.js` are also available in `dist` directory and you can use them on production instead of regular ones).
 
@@ -94,7 +116,7 @@ or by providing jQuery selector inside `data-nav-toggle` attribute:
 
 mlStackNav can still works in its basic form even when JavaScript is disabled. You just need to make sure that:
 
-- `no-js` class is present on the top level element on your page (e.g. on `html` element: `<html class="no-js">`
+- `no-js` class is present on the top-level element on your page (e.g. on `html` element: `<html class="no-js">`
 - `no-js` is removed before mlStackNav initialization, e.g. `$("html").removeClass("no-js")`
 - a link with the anchor matching the navigation `id` is used instead of a button (e.g. `<a href="#ml-stack-nav-1" class="ml-stack-nav-toggle">` and `<nav id="ml-stack-nav-1" class="ml-stack-nav js-ml-stack-nav">`)
 
