@@ -27,6 +27,7 @@
     // Defaults.
     var pluginName = "mlStackNav",
         dataKey = pluginName,
+        transitionFallback,
         defaultConfig = {
             navToggleSelector: ".ml-stack-nav-toggle",
             openClass: "is-open",
@@ -55,6 +56,31 @@
         this._defaults = defaultConfig;
         this._name = pluginName;
         this._init();
+    }
+
+    /**
+     * Simple fallback for `transitionend` event.
+     *
+     * TODO: Add `transitionend` support check.
+     *
+     * @param nav
+     * @constructor
+     */
+    function TransitionendFallback(nav) {
+        var interval;
+
+        this.start = function () {
+            interval = setInterval(function () {
+                if (!nav.isOpen()) {
+                    nav.el.$nav.css("z-index", "");
+                    clearInterval(interval);
+                }
+            }, 1000);
+        };
+
+        this.stop = function () {
+            clearInterval(interval);
+        };
     }
 
     $.extend(Plugin.prototype, {
@@ -106,7 +132,7 @@
                 // TODO - improve detecting CSS animation completion.
                 if (!that.isOpen()) {
                     // Move menu below whole document when a transition has completed.
-                    that.el.$nav.css("z-index", "-1");
+                    that.el.$nav.css("z-index", "");
                 }
             });
         },
@@ -139,6 +165,10 @@
             this.el.$nav.trigger($.Event("show.ml-stack-nav", {
                 relatedTarget: this.el.$toggleButton[0]
             }));
+
+            if (typeof transitionFallback === "function" && transitionFallback.hasOwnProperty(("stop"))) {
+                transitionFallback.stop();
+            }
 
             this.el.$toggleButton.addClass(this.config.activeClass);
 
@@ -193,6 +223,9 @@
                 .attr("aria-expanded", "false")
                 .find("." + this.config.openClass).removeClass(this.config.openClass);
             this.el.$nav.find("." + this.config.activeClass).removeClass(this.config.activeClass);
+
+            transitionFallback = new TransitionendFallback(this);
+            transitionFallback.start();
         }
     });
 
