@@ -1,6 +1,6 @@
 /*!
- * ml-stack-nav - v1.1.2
- * Customizable, accessible, easy-to-use multi-level stack navigation menu with slide effect.
+ * ml-stack-nav - v1.1.3
+ * Customizable, responsive, accessible, easy-to-use multi-level stack navigation menu with slide effect.
  * https://github.com/damianwajer/ml-stack-nav
  * 
  * Author: Damian Wajer
@@ -36,7 +36,6 @@
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
           transform: rotate(0deg);
 }
 .ml-stack-nav-toggle__line:nth-child(2) {
@@ -52,13 +51,11 @@
 }
 .ml-stack-nav-toggle.is-active .ml-stack-nav-toggle__line:nth-child(2) {
   -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 .ml-stack-nav-toggle.is-active .ml-stack-nav-toggle__line:nth-child(3) {
   top: 9px;
   -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
